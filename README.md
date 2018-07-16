@@ -1,10 +1,10 @@
 # ObservingInterface
 
-##やりたいこと
+## やりたいこと
  ObservableCollection内の全てインスタンスのフィールドフラグが true だった場合に、
  UIボタンを押せるようにしたい。
 
-##困っていること
+## 困っていること
  ObservableCollectionのインスタンスは、依存性を下げるためDIコンテナ(Autofac)を使って生成していますが、
  ObservableCollection\<Interface\> だと、インスタンスのフィールドを参照できないのでビルドが通りません。
 
