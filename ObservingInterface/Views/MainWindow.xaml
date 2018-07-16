@@ -1,0 +1,17 @@
+﻿<Window x:Class="ObservingInterface.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:prism="http://prismlibrary.com/"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        Title="ObservingInterface" Height="200" Width="500">
+    <StackPanel Margin="20">
+        <!-- <ContentControl prism:RegionManager.RegionName="ContentRegion" /> -->
+
+        <TextBlock Text="各テキストボックスに文字が入力されたらボタンが押せます" />
+        <TextBox Text="{Binding Text1.Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+        <TextBox Text="{Binding Text2.Value, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+        <Button Content="Class" Command="{Binding CommandFromClass, Mode=OneWay}" />
+        <Button Content="Interface" Command="{Binding CommandFromInterface, Mode=OneWay}" />
+    </StackPanel>
+</Window>
