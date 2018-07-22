@@ -105,8 +105,10 @@ namespace ObservingInterface.ViewModels
             // 各テキストボックスに文字があればクリックできる
             //   ★インターフェースを使ってクラスへの依存性をなくしている場面で、
             //     どのように実装すれば良いのでしょうか？
+            //   ★追記：IPerson に INotifyPropertyChanged を継承させた
+            //           okazuki様、ありがとうございます
             this.CommandFromInterface = this.PeopleInterface
-                .ObserveElementProperty(x => x.IsInput)     // ここがエラーになります
+                .ObserveElementProperty(x => x.IsInput)
                 .Scan(0, (counter, x) => counter + (x.Value ? 1 : (0 < counter ? -1 : 0)))
                 .Select(counter => counter >= this.PeopleClass.Count)
                 .ToReactiveCommand();

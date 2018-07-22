@@ -1,7 +1,10 @@
-﻿namespace ObservingInterface.Models
+﻿using System.ComponentModel;
+
+namespace ObservingInterface.Models
 {
-    interface IPerson
+    interface IPerson : INotifyPropertyChanged
     {
+        bool IsInput { get; set; }
         void SetName(string name);
         bool GetIsInput();
     }
